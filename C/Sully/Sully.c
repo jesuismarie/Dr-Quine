@@ -11,9 +11,9 @@ int main() {
 	f = fopen(src, "w");
 	if (!f) return 1;
 
-	char *code = "#include <stdio.h>%c#include <stdlib.h>%c#include <unistd.h>%c%cint main() {%c\tint i = %d;%c\tchar src[64], exe[64];%c\tFILE *f;%c%c\tsprintf(src, %cSully/Sully_%%d.c%c, i);%c\tf = fopen(src, %cw%c);%c\tif (!f) return 1;%c%c\tchar *code = %c%s%c;%c%c\tfprintf(f, code, 10, 10, 10, 10, 10, i - 1, 10, 10, 10, 10, 34, 34, 10, 34, 34, 10, 10, 10, 34, code, 34, 10, 10, 10, 10, 10, 34, 34, 10, 10, 10, 10, 34, 34, 10, 10, 10, 10, 10);%c\tfclose(f);%c%c\tsprintf(exe, %cgcc -o Sully/Sully_%%d Sully/Sully_%%d.c%c, i, i);%c\tsystem(exe);%c%c\tif (i > 0) {%c\t\tsprintf(exe, %c./Sully/Sully_%%d%c, i);%c\t\tsystem(exe);%c\t}%c\treturn 0;%c}%c";
+	char *code = "#include <stdio.h>%c#include <stdlib.h>%c#include <unistd.h>%c%cint main() {%c%cint i = %d;%c%cchar src[64], exe[64];%c%cFILE *f;%c%c%csprintf(src, %cSully/Sully_%%d.c%c, i);%c%cf = fopen(src, %cw%c);%c%cif (!f) return 1;%c%c%cchar *code = %c%s%c;%c%c%cfprintf(f, code, 10, 10, 10, 10, 10, 9, i - 1, 10, 9, 10, 9, 10, 10, 9, 34, 34, 10, 9, 34, 34, 10, 9, 10, 10, 9, 34, code, 34, 10, 10, 9, 10, 9, 10, 10, 9, 34, 34, 10, 9, 10, 10, 9, 10, 9, 9, 34, 34, 10, 9, 9, 10, 9, 10, 9, 10, 10);%c%cfclose(f);%c%c%csprintf(exe, %cgcc -o Sully/Sully_%%d Sully/Sully_%%d.c%c, i, i);%c%csystem(exe);%c%c%cif (i > 0) {%c%c%csprintf(exe, %c./Sully/Sully_%%d%c, i);%c%c%csystem(exe);%c%c}%c%creturn 0;%c}%c";
 
-	fprintf(f, code, 10, 10, 10, 10, 10, i - 1, 10, 10, 10, 10, 34, 34, 10, 34, 34, 10, 10, 10, 34, code, 34, 10, 10, 10, 10, 10, 34, 34, 10, 10, 10, 10, 34, 34, 10, 10, 10, 10, 10);
+	fprintf(f, code, 10, 10, 10, 10, 10, 9, i - 1, 10, 9, 10, 9, 10, 10, 9, 34, 34, 10, 9, 34, 34, 10, 9, 10, 10, 9, 34, code, 34, 10, 10, 9, 10, 9, 10, 10, 9, 34, 34, 10, 9, 10, 10, 9, 10, 9, 9, 34, 34, 10, 9, 9, 10, 9, 10, 9, 10, 10);
 	fclose(f);
 
 	sprintf(exe, "gcc -o Sully/Sully_%d Sully/Sully_%d.c", i, i);
