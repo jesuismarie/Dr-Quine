@@ -1,20 +1,20 @@
-CC = gcc
-FLAGS = -Wall -Wextra -Werror -g -fsanitize=address
+CC				= gcc
+FLAGS			= -Wall -Wextra -Werror -g -fsanitize=address
 
-COLLEEN_NAME = Colleen/Colleen
-GRACE_NAME = Grace/Grace
-SULLY_NAME = Sully/Sully
+COLLEEN_NAME	= Colleen/Colleen
+GRACE_NAME		= Grace/Grace
+SULLY_NAME		= Sully/Sully
 
-COLLEEN_SRC = Colleen/Colleen.c
-GRACE_SRC = Grace/Grace.c
-SULLY_SRC = Sully/Sully.c
+COLLEEN_SRC		= Colleen/Colleen.c
+GRACE_SRC		= Grace/Grace.c
+SULLY_SRC		= Sully/Sully.c
 
-COLLEEN_OBJ = $(COLLEEN_SRC:.c=.o)
-GRACE_OBJ = $(GRACE_SRC:.c=.o)
-SULLY_OBJ = $(SULLY_SRC:.c=.o)
+COLLEEN_OBJ		= $(COLLEEN_SRC:.c=.o)
+GRACE_OBJ		= $(GRACE_SRC:.c=.o)
+SULLY_OBJ		= $(SULLY_SRC:.c=.o)
 
-GRACE_FILE = $(GRACE_NAME)_kid.c
-SULLY_FILES = $(wildcard Sully/Sully_*)
+GRACE_FILE		= $(GRACE_NAME)_kid.c
+SULLY_FILES		= $(wildcard Sully/Sully_*)
 
 RESET			= \033[0m
 BLUE			= \033[34m
@@ -41,10 +41,11 @@ $(SULLY_NAME): $(SULLY_OBJ)
 
 clean:
 	@rm -f $(COLLEEN_OBJ) $(GRACE_OBJ) $(SULLY_OBJ)
-	@echo "$(BLUE)Everything is clean!$(RESET)"
+	@echo "$(BLUE)Cleaning object files$(RESET)"
 
 fclean: clean
 	@rm -f $(COLLEEN_NAME) $(GRACE_NAME) $(GRACE_FILE) $(SULLY_NAME) $(SULLY_FILES)
+	@echo "$(BLUE)Everything is clean!$(RESET)"
 
 re: fclean all
 
