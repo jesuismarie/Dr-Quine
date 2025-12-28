@@ -1,7 +1,6 @@
 *.o
 .vscode/
-./Collen
-./Grace
+bin
+build
 Grace_kid.c
-./Sully
 Sully_*.c
