@@ -1,9 +1,9 @@
 # Outside comment
 
-def print_s(s):
-	print(s)
+def p(s):
+	print(s % (10, 10, 10, 10, 10, 34, 34, 10, 10, 34, s, 34, 10, 10))
 
 if __name__ == "__main__":
 	# Inside comment
-	s = '# Outside comment\n\ndef print_s(s):\n	print()\n\nif __name__ == "__main__":\n	# Inside comment\n	s = ...\n	print_s(s)\n'
-	print_s(s)
+	s = "# Outside comment%c%cdef p(s):%c	print(s %% (10, 10, 10, 10, 10, 34, 34, 10, 10, 34, s, 34, 10, 10))%c%cif __name__ == %c__main__%c:%c	# Inside comment%c	s = %c%s%c%c	p(s)%c"
+	p(s)
