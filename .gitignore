@@ -2,9 +2,6 @@
 .vscode/
 bin
 build
-Grace_kid.c
-Grace_kid.s
-Grace_kid.py
-Sully_*.c
-Sully_*.s
-Sully_*.py
+Colleen_*
+Grace_*
+Sully_*
