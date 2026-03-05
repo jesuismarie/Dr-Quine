@@ -12,7 +12,7 @@ BLUE = \033[34m
 APPLE_GREEN = \033[38;2;141;182;0m
 
 colleen: $(COLLEEN_SRC)
-	@$(PYTHON) $(COLLEEN_SRC)
+	@$(PYTHON) $(COLLEEN_SRC) > Colleen_copy.py
 	@echo "$(APPLE_GREEN)Colleen completed successfully!$(RESET)"
 
 grace: $(GRACE_SRC)
